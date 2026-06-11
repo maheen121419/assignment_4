@@ -1,0 +1,28 @@
+name: My First CI Pipeline
+
+# Event (when workflow runs)
+on:
+  push:
+    branches: [ "main" ]
+
+# Job
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # Steps
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Show current directory
+        run: pwd
+
+      - name: List files
+        run: ls -la
+
+      - name: Make directory
+        run: mkdir my_folder
+
+      - name: Echo message
+        run: echo "I am learning Github Actions"
